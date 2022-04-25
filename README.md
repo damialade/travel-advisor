@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,4 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # travel-advisor-clone
 This is a travel companion app, a clone of travel advisor making use of it's Api's.   This site can't load Google Maps correctly" and it's "For development purposes only." that means that you have to enter your billing details. Google requires that to verify your identity in order for it to distinguish actual people from robots.
->>>>>>> 80ee54b7b01778953dbd06f5d98cc020a828e6d1
+
