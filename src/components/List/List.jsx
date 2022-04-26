@@ -11,22 +11,11 @@ import {
 } from "@material-ui/core";
 import UseStyles from "./styles";
 
-const List = () => {
+const List = ({places}) => {
   const classes = UseStyles();
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
 
-  const places = [
-    { name: "Kapadocia" },
-    { name: "Transcorp Hilton" },
-    { name: "Nike Art Gallery" },
-    { name: "Kos Lagos" },
-    { name: "Sheraton" },
-    { name: "Ilashe Resort" },
-    { name: "Jinja Lagos" },
-    { name: "Protea" },
-    { name: "Yankari Game Reserves" },
-  ];
 
   return (
     <div className={classes.container}>
