@@ -1,4 +1,5 @@
-import React, {useState }from "react";
+import React, { useState } from "react";
+import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import {
   CircularProgress,
   Grid,
@@ -12,8 +13,21 @@ import UseStyles from "./styles";
 
 const List = () => {
   const classes = UseStyles();
-  const [type, setType] = useState('restaurants');
-   const [rating, setRating] = useState("");
+  const [type, setType] = useState("restaurants");
+  const [rating, setRating] = useState("");
+
+  const places = [
+    { name: "Kapadocia" },
+    { name: "Transcorp Hilton" },
+    { name: "Nike Art Gallery" },
+    { name: "Kos Lagos" },
+    { name: "Sheraton" },
+    { name: "Ilashe Resort" },
+    { name: "Jinja Lagos" },
+    { name: "Protea" },
+    { name: "Yankari Game Reserves" },
+  ];
+
   return (
     <div className={classes.container}>
       <Typography variant="h4">
@@ -37,6 +51,13 @@ const List = () => {
           <MenuItem value={4.5}>Above 4.5</MenuItem>
         </Select>
       </FormControl>
+      <Grid container spacing={3} className={classes.list}>
+        {places?.map((place, index) => (
+          <Grid item key={index} xs={12}>
+            <PlaceDetails place={place} />
+          </Grid>
+        ))}
+      </Grid>
     </div>
   );
 };
