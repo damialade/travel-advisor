@@ -5,12 +5,12 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import Rating from "@material-ui/lab/Rating";
 
 import useStyles from "./styles";
-import mapStyles from './mapStyles';
+import mapStyles from "./mapStyles";
 
 const Map = ({
   setCoordinates,
   setBounds,
-  coordinates,
+  coordinates = { lat: 0, lng: 0 },
   places,
   setChildClicked,
   weatherData,
@@ -22,7 +22,6 @@ const Map = ({
     <div className={classes.mapContainer}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
-        defaultCenter={coordinates}
         center={coordinates}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
@@ -42,8 +41,8 @@ const Map = ({
         {places?.map((place, index) => (
           <div
             className={classes.markerContainer}
-            lat={Number(place.latitude)}
-            lng={Number(place.longitude)}
+            lat={Number(place?.latitude)}
+            lng={Number(place?.longitude)}
             key={index}
           >
             {!isDesktop ? (
@@ -55,13 +54,13 @@ const Map = ({
                   variant="subtitle2"
                   gutterBottom
                 >
-                  {place.name}
+                  {place?.name}
                 </Typography>
                 <img
                   className={classes.pointer}
                   src={
-                    place.photo
-                      ? place.photo.images.large.url
+                    place?.photo
+                      ? place?.photo?.images?.large?.url
                       : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
                   }
                   alt={place.name}

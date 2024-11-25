@@ -4,16 +4,10 @@ export default [
     elementType: "all",
     stylers: [
       {
-        saturation: "-100",
+        visibility: "on",
       },
-    ],
-  },
-  {
-    featureType: "administrative.province",
-    elementType: "all",
-    stylers: [
       {
-        visibility: "off",
+        lightness: 33,
       },
     ],
   },
@@ -22,13 +16,7 @@ export default [
     elementType: "all",
     stylers: [
       {
-        saturation: -100,
-      },
-      {
-        lightness: 65,
-      },
-      {
-        visibility: "on",
+        color: "#f2f2f2",
       },
     ],
   },
@@ -37,13 +25,10 @@ export default [
     elementType: "all",
     stylers: [
       {
-        saturation: -100,
+        saturation: 20,
       },
       {
-        lightness: "50",
-      },
-      {
-        visibility: "simplified",
+        lightness: 20,
       },
     ],
   },
@@ -52,34 +37,40 @@ export default [
     elementType: "all",
     stylers: [
       {
-        saturation: "-100",
+        saturation: 0,
+      },
+      {
+        lightness: 0,
       },
     ],
   },
   {
     featureType: "road.highway",
-    elementType: "all",
+    elementType: "geometry",
     stylers: [
       {
-        visibility: "simplified",
+        color: "#e6b800",
+      },
+      {
+        lightness: 40,
       },
     ],
   },
   {
     featureType: "road.arterial",
-    elementType: "all",
+    elementType: "geometry",
     stylers: [
       {
-        lightness: "30",
+        color: "#f9d1b7",
       },
     ],
   },
   {
     featureType: "road.local",
-    elementType: "all",
+    elementType: "geometry",
     stylers: [
       {
-        lightness: "40",
+        color: "#ffffff",
       },
     ],
   },
@@ -88,10 +79,10 @@ export default [
     elementType: "all",
     stylers: [
       {
-        saturation: -100,
+        color: "#808080",
       },
       {
-        visibility: "simplified",
+        visibility: "on",
       },
     ],
   },
@@ -100,25 +91,25 @@ export default [
     elementType: "geometry",
     stylers: [
       {
-        hue: "#ffff00",
-      },
-      {
-        lightness: -25,
-      },
-      {
-        saturation: -97,
+        color: "#a2daf2",
       },
     ],
   },
   {
     featureType: "water",
-    elementType: "labels",
+    elementType: "labels.text.fill",
     stylers: [
       {
-        lightness: -25,
+        color: "#070707",
       },
+    ],
+  },
+  {
+    featureType: "water",
+    elementType: "labels.text.stroke",
+    stylers: [
       {
-        saturation: -100,
+        color: "#ffffff",
       },
     ],
   },
