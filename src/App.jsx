@@ -3,8 +3,7 @@ import { CssBaseline, Grid } from "@material-ui/core";
 import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import Map from "./components/Map/Map";
-import { getPlacesData,getWeatherData } from "./api";
-
+import { getPlacesData, getWeatherData } from "./api";
 
 const App = () => {
   const [places, setPlaces] = useState([]);
@@ -20,7 +19,6 @@ const App = () => {
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
 
-  
   //to get users current location
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -32,7 +30,7 @@ const App = () => {
 
   //effective based upon the rating clicked on
   useEffect(() => {
-    const filteredPlaces = places.filter((place) => place.rating > rating);
+    const filteredPlaces = places?.filter((place) => place.rating > rating);
     setFilteredPlaces(filteredPlaces);
   }, [rating]);
 
@@ -41,9 +39,9 @@ const App = () => {
     if (bounds.sw && bounds.ne) {
       setIsLoading(true);
 
-
-      getWeatherData(coordinates.lat, coordinates.lng)
-        .then((data) => setWeatherData(data));
+      getWeatherData(coordinates.lat, coordinates.lng).then((data) =>
+        setWeatherData(data)
+      );
 
       getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
         setPlaces(data?.filter((place) => place.name && place.num_reviews > 0));
@@ -75,8 +73,8 @@ const App = () => {
             setBounds={setBounds}
             coordinates={coordinates}
             places={filteredPlaces.length ? filteredPlaces : places}
-            setChildClicked={ setChildClicked }
-            weatherData ={weatherData}
+            setChildClicked={setChildClicked}
+            weatherData={weatherData}
           />
         </Grid>
       </Grid>
